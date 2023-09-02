@@ -1,0 +1,63 @@
+.main-div {
+    width: 60%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #151414;
+    background-color: #44f1448b;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.searchbar {
+    text-align: right;
+    margin-right: 23px;
+}
+
+.searchinput {
+    border-radius: 10px;
+}
+
+.search {
+    border-radius: 20px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+.table {
+    width: 95%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.headers {
+    background-color: #ffffff;
+    color: rgb(23, 197, 23);
+    text-align: center;
+    padding: 8px;
+}
+
+.data-even {
+    text-align: center;
+    padding: 8px;
+    background-color: #8883839f; /* Even row color */
+    color:rgb(0, 0, 0);
+}
+
+.data-odd {
+    text-align: center;
+    padding: 8px;
+    background-color: rgb(248, 244, 244); /* Odd row color */
+}
+.H1{
+    text-align: center;
+    filter:drop-shadow(4px 4px 2px rgb(0, 136, 255));
+}
