@@ -58,8 +58,15 @@ function Table() {
                 key={index}
                 className={index % 2 === 0 ? 'data-even' : 'data-odd'}
               >
-                <td>
-                  <Link to={`/dashboard/${data.partyCode}`}>{data.partyCode}</Link>
+                <td className="link">
+                  <button className='btn-x'>
+                    <Link
+                      to={`/dashboard/${data.partyCode}`}
+                      className="party-code-link"
+                    >
+                      {data.partyCode}
+                    </Link>
+                  </button>
                 </td>
                 <td>{data.ownerName}</td>
                 <td>{data.ledgerName}</td>

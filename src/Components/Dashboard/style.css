@@ -1,0 +1,38 @@
+.user-dashboard{
+background-color: rgb(252, 252, 252);
+}
+.heading{
+    text-align: center;
+    color: rgb(149, 59, 233);
+}
+.outlet-info{
+  color:rgb(77, 160, 56);
+  margin-left:20px;
+  padding-left:8px;
+  border:1px solid black;
+  border-radius:20px;
+  width: 40%;
+}
+
+.outlet-image {
+  border:5px solid red;
+    width: 200px; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    overflow: hidden; /* Hide any overflow if images are larger */
+    align-items: center;
+    align-content: center;
+    
+  }
+  
+  .outlet-image img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Maintain the aspect ratio */
+  }
+  .text-info{
+    border-radius: 10px;
+
+  }
+  .rest{
+    padding-top:10px;
+    padding-bottom: 10px;
+  }
