@@ -1,28 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Table.css';
 import OutletData from './OutletData'; // Import your data array
 import { Link } from 'react-router-dom';
+import { AiFillHome, AiOutlineMobile } from 'react-icons/ai';
+import { FcBusinessman, FcShop } from 'react-icons/fc';
 
 function Table() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [sortColumn, setSortColumn] = useState(null);
+  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortedData, setSortedData] = useState([]);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredData = OutletData.filter((data) => {
-    return (
-      (data.partyCode &&
-        data.partyCode.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (data.ownerName &&
-        data.ownerName.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (data.areaName &&
-        data.areaName.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (data.ledgerName &&
-        data.ledgerName.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (data.mobileNumber && data.mobileNumber.includes(searchTerm))
-    );
-  });
+  const handleSort = (column) => {
+    if (sortColumn === column) {
+      // Toggle the sorting order if the same column is clicked
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      // Set the new sorting column and default to ascending order
+      setSortColumn(column);
+      setSortOrder('asc');
+    }
+  };
+
+  useEffect(() => {
+    // Create a copy of the original data to avoid modifying it directly
+    const dataCopy = [...OutletData];
+
+    // Sort the data based on the selected column and order
+    dataCopy.sort((a, b) => {
+      const aValue = a[sortColumn] || '';
+      const bValue = b[sortColumn] || '';
+
+      if (sortOrder === 'asc') {
+        return aValue.localeCompare(bValue);
+      } else {
+        return bValue.localeCompare(aValue);
+      }
+    });
+
+    // Filter the sorted data based on the search term
+    const filteredData = dataCopy.filter((data) => {
+      return (
+        (data.partyCode &&
+          data.partyCode.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (data.ownerName &&
+          data.ownerName.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (data.areaName &&
+          data.areaName.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (data.ledgerName &&
+          data.ledgerName.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (data.mobileNumber && data.mobileNumber.includes(searchTerm))
+      );
+    });
+
+    // Update the sorted data state
+    setSortedData(filteredData);
+  }, [searchTerm, sortColumn, sortOrder]);
 
   return (
     <div className="table-home">
@@ -32,50 +69,91 @@ function Table() {
       <div className="main-div">
         <div className="searchbar">
           <input
-            className="searchinput"
             type="text"
-            placeholder="Search"
+            placeholder="Search for party"
             value={searchTerm}
             onChange={handleSearchChange}
           />
-          <button className="search" type="submit">
-            Search
+          <button className="btn-x" type="submit">
+            <Link
+              to={`/dashboard/${
+                sortedData[0] ? sortedData[0].partyCode : ''
+              }`}
+              className="party-code-link"
+            >
+              Search
+            </Link>
           </button>
         </div>
-        <table className="table">
-          <thead>
-            <tr className="headers">
-              <th>Party Code</th>
-              <th>Owner Name</th>
-              <th>Ledger Name</th>
-              <th>Area</th>
-              <th>Mobile no.</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredData.map((data, index) => (
-              <tr
-                key={index}
-                className={index % 2 === 0 ? 'data-even' : 'data-odd'}
-              >
-                <td className="link">
-                  <button className='btn-x'>
-                    <Link
-                      to={`/dashboard/${data.partyCode}`}
-                      className="party-code-link"
-                    >
-                      {data.partyCode}
-                    </Link>
-                  </button>
-                </td>
-                <td>{data.ownerName}</td>
-                <td>{data.ledgerName}</td>
-                <td>{data.areaName}</td>
-                <td>{data.mobileNumber}</td>
+        <div className="sorting-button">
+          <button
+            onClick={() =>
+              setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
+            }
+          >
+            {sortOrder === 'asc' ? 'Sort Desc' : 'Sort Asc'}
+          </button>
+        </div>
+        <div className="table-container">
+          <table className="table">
+            <thead>
+              <tr className="headers">
+                <th
+                  style={{ color: 'blueviolet', cursor: 'pointer' }}
+                  onClick={() => handleSort('partyCode')}
+                >
+                  Party Code
+                </th>
+                <th
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => handleSort('ownerName')}
+                >
+                  <FcBusinessman /> Owner Name
+                </th>
+                <th
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => handleSort('ledgerName')}
+                >
+                  <FcShop /> Ledger Name
+                </th>
+                <th style={{   cursor: 'pointer' }}>
+                  <AiFillHome style={{ color: 'blueviolet' }} /> Area
+                </th>
+                <th
+                  style={{
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => handleSort('mobileNumber')}
+                >
+                  <AiOutlineMobile /> Mobile no.
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="table-body">
+              {sortedData.map((data, index) => (
+                <tr
+                  key={index}
+                  className={index % 2 === 0 ? 'data-even' : 'data-odd'}
+                >
+                  <td className="link">
+                    <button className="btn-x">
+                      <Link
+                        to={`/dashboard/${data.partyCode}`}
+                        className="party-code-link"
+                      >
+                        {data.partyCode}
+                      </Link>
+                    </button>
+                  </td>
+                  <td>{data.ownerName}</td>
+                  <td>{data.ledgerName}</td>
+                  <td>{data.areaName}</td>
+                  <td>{data.mobileNumber}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

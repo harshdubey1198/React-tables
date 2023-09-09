@@ -30,6 +30,7 @@ background-color: rgb(252, 252, 252);
   }
   .text-info{
     border-radius: 10px;
+    text-align: left;
 
   }
   .rest{

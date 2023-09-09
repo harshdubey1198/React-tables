@@ -1,6 +1,6 @@
 const OutletData = [
     {
-      partyCode:'1',
+      partyCode:'P00001',
       ownerName:'Harsh',
       ledgerName:'HD Corporate hub',
       outletType:'Producers',
@@ -17,25 +17,10 @@ const OutletData = [
       status:'true',
     
     },
-    {
-        partyCode: 'P001',
-        ownerName: 'John Doe',
-        ledgerName: 'Ledger ABC',
-        outletType: 'Retail',
-        classOfOutlet: 'A',
-        whatsappNumber: '9876543210',
-        mobileNumber: '9876543210',
-        permanentRemark: 'Giant',
-        temporaryRemark: 'Stock full',
-        areaName: 'Panagar',
-        beatName: 'Panagar 3',
-        birthday: '01/01/1990',
-        aniversary: '01/01/2010',
-        status:'True',
-      },
+    
        
     {
-      partyCode: 'P002',
+      partyCode: 'P00002',
       ownerName: 'Jane Smith',
       ledgerName: 'Ledger XYZ',
       outletType: 'Wholesale',
@@ -52,7 +37,7 @@ const OutletData = [
     },
     // Additional outlet data
     {
-      partyCode: 'P003',
+      partyCode: 'P00003',
       ownerName: 'Michael Johnson',
       ledgerName: 'Ledger MNO',
       outletType: 'Retail',
@@ -69,7 +54,7 @@ const OutletData = [
       status:'true',
     },
     {
-      partyCode: 'P004',
+      partyCode: 'P00004',
       ownerName: 'Sarah Lee',
       ledgerName: 'Ledger ABC',
       outletType: 'Retail',
@@ -86,7 +71,7 @@ const OutletData = [
   
     },
     {
-      partyCode: 'P005',
+      partyCode: 'P00005',
       ownerName: 'David Williams',
       ledgerName: 'Ledger XYZ',
       outletType: 'Wholesale',
@@ -103,7 +88,7 @@ const OutletData = [
   
     },
     {
-      partyCode: 'P006',
+      partyCode: 'P00006',
       ownerName: 'Emma Johnson',
       ledgerName: 'Ledger EFG',
       outletType: 'Retail',
@@ -120,7 +105,7 @@ const OutletData = [
   
     },
     {
-      partyCode: 'P007',
+      partyCode: 'P00007',
       ownerName: 'Michael Brown',
       ledgerName: 'Ledger MNO',
       outletType: 'Wholesale',
@@ -137,7 +122,7 @@ const OutletData = [
   
     },
     {
-      partyCode: 'P008',
+      partyCode: 'P00008',
       ownerName: 'Sophia Miller',
       ledgerName: 'Ledger ABC',
       outletType: 'Retail',
@@ -153,7 +138,7 @@ const OutletData = [
       status:'true',
     },
     {
-      partyCode: 'P009',
+      partyCode: 'P00009',
       ownerName: 'William Jones',
       ledgerName: 'Ledger XYZ',
       outletType: 'Retail',
@@ -169,7 +154,7 @@ const OutletData = [
       status:'true',
     },
     {
-      partyCode: 'P010',
+      partyCode: 'P00010',
       ownerName: 'Olivia Davis',
       ledgerName: 'Ledger EFG',
       outletType: 'Wholesale',
@@ -185,7 +170,7 @@ const OutletData = [
       imageUrl:'https://torrent4you.org/wp-content/uploads/marvels-spider-man-remastered-330x140.jpg',
       status:'false',
     },{
-      partyCode: 'P011',
+      partyCode: 'P00011',
       ownerName: 'Peter Smith',
       ledgerName: 'Ledger XYZ',
       outletType: 'Retail',
@@ -202,7 +187,7 @@ const OutletData = [
       status: 'true'
     },
     {
-      partyCode: 'P012',
+      partyCode: 'P00012',
       ownerName: 'Amelia Williams',
       ledgerName: 'Ledger MNO',
       outletType: 'Wholesale',
@@ -218,7 +203,7 @@ const OutletData = [
       status: 'true'
     },
     {
-      partyCode: 'P013',
+      partyCode: 'P00013',
       ownerName: 'Thomas Brown',
       ledgerName: 'Ledger ABC',
       outletType: 'Retail',
@@ -235,7 +220,7 @@ const OutletData = [
       status: 'true'
     },
     {
-      partyCode: 'P014',
+      partyCode: 'P00014',
       ownerName: 'Elizabeth Johnson',
       ledgerName: 'Ledger EFG',
       outletType: 'Wholesale',
@@ -250,7 +235,7 @@ const OutletData = [
       aniversary: '01/01/2025',
       status: 'true'
     },{
-      partyCode: 'P016',
+      partyCode: 'P00016',
       ownerName: 'Emily Jones',
       ledgerName: 'Ledger ABC',
       outletType: 'Wholesale',
@@ -266,7 +251,7 @@ const OutletData = [
       status: 'true'
     },
     {
-      partyCode: 'P017',
+      partyCode: 'P00017',
       ownerName: 'Benjamin Davis',
       ledgerName: 'Ledger EFG',
       outletType: 'Retail',
@@ -282,7 +267,7 @@ const OutletData = [
       status: 'true'
     },
     {
-      partyCode: 'P018',
+      partyCode: 'P00018',
       ownerName: 'Caroline Miller',
       ledgerName: 'Ledger MNO',
       outletType: 'Wholesale',
@@ -298,7 +283,7 @@ const OutletData = [
       status: 'true'
     },
     {
-      partyCode: 'P019',
+      partyCode: 'P00019',
       ownerName: 'David Williams',
       ledgerName: 'Ledger ABC',
       outletType: 'Retail',
@@ -314,7 +299,7 @@ const OutletData = [
       status: 'true'
     },
     {
-      partyCode: 'P020',
+      partyCode: 'P00020',
       ownerName: 'Emma Brown',
       ledgerName: 'Ledger EFG',
       outletType: 'Wholesale',
@@ -328,6 +313,21 @@ const OutletData = [
       birthday: '01/01/2003',
       aniversary: '01/01/2030',
       status: 'true'
+    },{
+      partyCode: 'P00021',
+      ownerName: 'John Doe',
+      ledgerName: 'Ledger ABC',
+      outletType: 'Retail',
+      classOfOutlet: 'A',
+      whatsappNumber: '9876543210',
+      mobileNumber: '9876543210',
+      permanentRemark: 'Giant',
+      temporaryRemark: 'Stock full',
+      areaName: 'Panagar',
+      beatName: 'Panagar 3',
+      birthday: '01/01/1990',
+      aniversary: '01/01/2010',
+      status:'True',
     },
     // Add more outlet objects as needed
   

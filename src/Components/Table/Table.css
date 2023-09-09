@@ -1,5 +1,5 @@
 .main-div {
-    width: 60%;
+    width: 90%;
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid #151414;
@@ -13,18 +13,27 @@
 }
 
 .searchbar {
-    text-align: right;
-    margin-right: 23px;
+    text-align: center;
+    /* margin-right: 35px; */
+}
+.searchbar input{
+    border-radius: 10px;
+    text-align: center;
 }
 
-.searchinput {
-    border-radius: 10px;
-}
+.searchbar input::placeholder {
+    /* Change the font size and color as desired */
+    font-size: 12px; /* Set the desired font size */
+    font-weight: bold ;
+    color: #57934b; /* Set the desired placeholder color */
+  }
+
 
 .search {
     border-radius: 20px;
     margin-bottom: 7px;
     margin-top: 7px;
+    cursor:pointer;
 }
 /* .link{
     border-radius:20px;
@@ -54,13 +63,15 @@
 .data-even {
     text-align: center;
     padding: 8px;
-    background-color: #8883839f; /* Even row color */
+    background-color: #6b7fe29f; /* Even row color */
     color:rgb(0, 0, 0);
+    font-weight: bolder;
 }
 
 .data-odd {
     text-align: center;
     padding: 8px;
+    font-style:italic;
     background-color: rgb(248, 244, 244); /* Odd row color */
 }
 .H1{
@@ -85,5 +96,31 @@
 
 .btn-x:hover .party-code-link {
   color: black;
-  font-weight: bold;
-}
+  font-weight: bolder;
+}/* Table.css */
+
+/* ... Your existing CSS styles for other elements */
+
+/* Apply scrollbar styles to the tbody element */
+.table-body {
+    /* Set the maximum height for the tbody to enable scrolling */
+    max-height: 200px; /* You can adjust the height as needed */
+  
+    /* Add the scrollbar only when the content overflows */
+    overflow-y: auto;
+  
+    /* Customize the scrollbar width and color */
+    scrollbar-width: thin; /* or auto for browser default */
+    scrollbar-color: #57934b #44f1448b; /* You can adjust the colors */
+  }
+  
+  /* Style the scrollbar thumb (the draggable part) */
+  .table-body::-webkit-scrollbar-thumb {
+    background-color: #57934b; /* Change the color as needed */
+    border-radius: 10px; /* Rounded corners for the thumb */
+  }
+  
+  /* Style the scrollbar track (the background of the scrollbar) */
+  .table-body::-webkit-scrollbar-track {
+    background-color: #44f1448b; /* Change the color as needed */
+  }

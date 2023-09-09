@@ -1,0 +1,80 @@
+/* Login.css */
+.LoginContainer {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top:150px ;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  .LoginContainer:hover{
+    backdrop-filter: blur(20px); /* Apply the background blur effect */
+    cursor: pointer;
+  }
+  
+  .LoginContainer h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .LoginContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .LoginContainer label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+}
+  
+  .LoginContainer input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .LoginContainer input::placeholder {
+    /* Change the font size and color as desired */
+    font-size: 12px; /* Set the desired font size */
+    font-weight: bold ;
+    color: #57934b; /* Set the desired placeholder color */
+  }
+  
+  .LoginContainer button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    width: 45%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .LoginContainer button:hover {
+    background-color: #0056b3;
+  }
+  /* .fp {
+     font-size: 12px;   //this is the font size of the button
+  text-align: right; //this is the alignment of the button
+  width: 45%;      //this is the width of the button
+  margin-bottom: 5px;
+  font-weight: 800;
+  }
+  */
+  .eye-icon{
+    position: relative;
+    left: 85%;
+    top: -28px;
+    cursor: pointer;
+  }
+  /* App.css */
+body {
+  margin: 0;
+  padding: 0;
+ 
+}
