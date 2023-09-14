@@ -1,24 +1,58 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
-import image from "./logo1198.png";
+import React, { useState } from "react";
+import "./Navbar.css";
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaYoutubeSquare,
+} from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-function Navbar() {
+import { NavLink } from "react-router-dom";
+
+const Navbar = () => {
+  const [showMediaIcons, setShowMediaIcons] = useState(false);
   return (
-    <div className="navbar">
-      <div className="navbar-left">
-        <img src={image} alt="Logo" />
-      </div>
-      <div className="navbar-center">
-        <h1>Page Title</h1>
-      </div>
-      <div className="navbar-right">
-        <Link to="/">Back</Link>
-        <Link to="/dashboard/P001 ">Dashboard</Link>
-        <Link to="/Login">Logout</Link>
-      </div>
-    </div>
+    <>
+      <nav className="main-nav">
+        {/* 1st logo part  */}
+        <div className="logo">
+          <h2>
+            <span>D</span>igamber
+            <span>T</span>ea
+          </h2>
+        </div>
+
+        {/* 2nd menu part  */}
+        <div
+          className={
+            showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
+          }>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/P00003">Table</NavLink>
+            </li>
+           
+          </ul>
+        </div>
+
+        {/* 3rd social media links */}
+        <div className="social-media">
+          
+
+          {/* hamburget menu start  */}
+          <div className="hamburger-menu">
+            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+              <GiHamburgerMenu />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </>
   );
-}
+};
 
 export default Navbar;

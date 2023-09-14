@@ -33,7 +33,7 @@ function UserDashboard() {
             
              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
         <Grid item xs={6}>
-          <Item><div className="text-info">
+          <Item><div className="text-info" style={{textSizeAdjust:"50"}}>
               <h2>Party Code: {partyDetails.partyCode}</h2>
               <p>Owner Name: {partyDetails.ownerName}</p>
               <p>Ledger Name: {partyDetails.ledgerName}</p>

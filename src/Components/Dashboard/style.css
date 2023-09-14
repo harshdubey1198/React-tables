@@ -29,6 +29,7 @@ background-color: rgb(252, 252, 252);
     height: 100%; /* Maintain the aspect ratio */
   }
   .text-info{
+  font-size:14px;
     border-radius: 10px;
     text-align: left;
 

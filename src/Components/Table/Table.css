@@ -1,9 +1,9 @@
 .main-div {
-    width: 90%;
+    width: 96%;
     border-collapse: collapse;
     border-spacing: 0;
-    border: 1px solid #151414;
-    background-color: #44f1448b;
+    border: 1px solid #000000;
+    background-color: #8e72ea;
     border-radius: 20px;
     margin: 0 auto;
     margin-top: 20px;
@@ -18,7 +18,9 @@
 }
 .searchbar input{
     border-radius: 10px;
-    text-align: center;
+    text-align: center;margin-top: 2px;
+    margin-bottom: 4px;
+
 }
 
 .searchbar input::placeholder {
@@ -29,28 +31,32 @@
   }
 
 
-.search {
-    border-radius: 20px;
-    margin-bottom: 7px;
-    margin-top: 7px;
-    cursor:pointer;
-}
+
 /* .link{
     border-radius:20px;
     /* border:1px solid red; */
 /*
     width:8%;
 } */
+.sorting-button{
+  border-radius: 7px;
+
+}
+.sorting-button:hover {
+  background-color: #090909;
+  color:whitesmoke;
+  font-weight: bolder;
+  cursor:pointer;
+}
 
 .table {
-    width: 95%;
-    border-collapse: collapse;
+    width: 99.5%;
+    border-collapse:collapse;
     border-radius: 10px;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    margin-bottom: 30px;
-    overflow: hidden;
+    margin-bottom: 6px;
 }
 
 .headers {
@@ -63,20 +69,21 @@
 .data-even {
     text-align: center;
     padding: 8px;
-    background-color: #6b7fe29f; /* Even row color */
+    background-color: #7887d0f3; /* Even row color */
     color:rgb(0, 0, 0);
-    font-weight: bolder;
-}
-
-.data-odd {
+    
+  }
+  
+  .data-odd {
     text-align: center;
     padding: 8px;
     font-style:italic;
+    font-weight: bolder;
     background-color: rgb(248, 244, 244); /* Odd row color */
 }
 .H1{
     text-align: center;
-    filter:drop-shadow(4px 4px 2px rgb(0, 136, 255));
+    filter:drop-shadow(1px 1px 8px rgb(0, 136, 255));
 }
 
 .btn-x {
@@ -92,6 +99,7 @@
 .party-code-link {
   text-decoration: none;
   color: white;
+  font-weight: bolder;
 }
 
 .btn-x:hover .party-code-link {
@@ -102,25 +110,37 @@
 /* ... Your existing CSS styles for other elements */
 
 /* Apply scrollbar styles to the tbody element */
-.table-body {
-    /* Set the maximum height for the tbody to enable scrolling */
-    max-height: 200px; /* You can adjust the height as needed */
-  
-    /* Add the scrollbar only when the content overflows */
+
+  .table-container{
+    border:2px solid black;
+    border-radius: 20px;
+    margin-right:10px;
     overflow-y: auto;
-  
-    /* Customize the scrollbar width and color */
-    scrollbar-width: thin; /* or auto for browser default */
-    scrollbar-color: #57934b #44f1448b; /* You can adjust the colors */
+  }
+  ::-webkit-scrollbar{
+    width:2rem;
+  }
+  ::-webkit-scrollbar-track{
+    background-color:black;
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: red;
+    border-radius: 2rem;
+    border:0.5rem solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: #72ea7e;
+  }
+
+  @media (max-width: 768px){
+  .table-body{
+    width:80%;
+    
+  }
+.table-body{
+  max-height:1500px;
+    }
   }
   
-  /* Style the scrollbar thumb (the draggable part) */
-  .table-body::-webkit-scrollbar-thumb {
-    background-color: #57934b; /* Change the color as needed */
-    border-radius: 10px; /* Rounded corners for the thumb */
-  }
-  
-  /* Style the scrollbar track (the background of the scrollbar) */
-  .table-body::-webkit-scrollbar-track {
-    background-color: #44f1448b; /* Change the color as needed */
-  }

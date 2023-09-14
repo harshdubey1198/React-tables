@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Table.css';
 import OutletData from './OutletData'; // Import your data array
 import { Link } from 'react-router-dom';
-import { AiFillHome, AiOutlineMobile } from 'react-icons/ai';
-import { FcBusinessman, FcShop } from 'react-icons/fc';
+// import { AiFillHome, } from 'react-icons/ai';
+import { FcBusinessman, FcShop,FcPhoneAndroid,FcHome ,FcList} from 'react-icons/fc';
 
 function Table() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -68,6 +68,7 @@ function Table() {
       </div>
       <div className="main-div">
         <div className="searchbar">
+         
           <input
             type="text"
             placeholder="Search for party"
@@ -76,17 +77,15 @@ function Table() {
           />
           <button className="btn-x" type="submit">
             <Link
-              to={`/dashboard/${
-                sortedData[0] ? sortedData[0].partyCode : ''
-              }`}
+              to={`/dashboard/${sortedData[0] ? sortedData[0].partyCode : ''
+                }`}
               className="party-code-link"
             >
               Search
             </Link>
           </button>
-        </div>
-        <div className="sorting-button">
           <button
+            className="sorting-button"
             onClick={() =>
               setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
             }
@@ -94,14 +93,15 @@ function Table() {
             {sortOrder === 'asc' ? 'Sort Desc' : 'Sort Asc'}
           </button>
         </div>
-        <div className="table-container">
+
+        <div className="table-container" style={{ maxHeight: '450px', overflowY: 'auto' }}>
           <table className="table">
             <thead>
               <tr className="headers">
                 <th
                   style={{ color: 'blueviolet', cursor: 'pointer' }}
                   onClick={() => handleSort('partyCode')}
-                >
+                ><FcList style={{marginTop:"3px"}} />
                   Party Code
                 </th>
                 <th
@@ -116,8 +116,8 @@ function Table() {
                 >
                   <FcShop /> Ledger Name
                 </th>
-                <th style={{   cursor: 'pointer' }}>
-                  <AiFillHome style={{ color: 'blueviolet' }} /> Area
+                <th style={{ cursor: 'pointer' }}>
+                  <FcHome style={{ color: 'blueviolet' }} /> Area
                 </th>
                 <th
                   style={{
@@ -125,7 +125,7 @@ function Table() {
                   }}
                   onClick={() => handleSort('mobileNumber')}
                 >
-                  <AiOutlineMobile /> Mobile no.
+                  <FcPhoneAndroid />Mobile no.
                 </th>
               </tr>
             </thead>
