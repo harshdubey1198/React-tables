@@ -40,6 +40,7 @@
 } */
 .sorting-button{
   border-radius: 7px;
+  font-weight: bolder;
 
 }
 .sorting-button:hover {
@@ -71,13 +72,14 @@
     padding: 8px;
     background-color: #7887d0f3; /* Even row color */
     color:rgb(0, 0, 0);
-    
+    text-transform: capitalize;
+    font-weight: bolder;    
   }
   
   .data-odd {
     text-align: center;
     padding: 8px;
-    font-style:italic;
+    text-transform: capitalize;
     font-weight: bolder;
     background-color: rgb(248, 244, 244); /* Odd row color */
 }
@@ -125,7 +127,7 @@
     border-radius: 20px;
   }
   ::-webkit-scrollbar-thumb{
-    background-color: red;
+    background-color: #7887d0f3;
     border-radius: 2rem;
     border:0.5rem solid transparent;
     background-clip: content-box;

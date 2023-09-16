@@ -98,10 +98,12 @@ function Table() {
           <table className="table">
             <thead>
               <tr className="headers">
+                <th>Status</th>
                 <th
                   style={{ color: 'blueviolet', cursor: 'pointer' }}
-                  onClick={() => handleSort('partyCode')}
-                ><FcList style={{marginTop:"3px"}} />
+                  onClick={() => handleSort('partyCode')}>
+
+                  <FcList style={{marginTop:"3px"}} />
                   Party Code
                 </th>
                 <th
@@ -134,7 +136,7 @@ function Table() {
                 <tr
                   key={index}
                   className={index % 2 === 0 ? 'data-even' : 'data-odd'}
-                >
+                ><td style={{fontWeight:"bolder"}}>{data.status}</td>
                   <td className="link">
                     <button className="btn-x">
                       <Link
