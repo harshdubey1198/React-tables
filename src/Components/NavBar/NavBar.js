@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaYoutubeSquare,
-} from "react-icons/fa";
+// import {
+//   FaFacebookSquare,
+//   FaInstagramSquare,
+//   FaYoutubeSquare,
+// } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { NavLink } from "react-router-dom";
@@ -32,10 +32,12 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/P00003">Table</NavLink>
+              <NavLink to="/login">Dashboard</NavLink>
             </li>
-           
-          </ul>
+            <li>
+              <NavLink to="/task">Tasks</NavLink>
+            </li>
+          </ul>n
         </div>
 
         {/* 3rd social media links */}
@@ -50,7 +52,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
+                      
     </>
   );
 };

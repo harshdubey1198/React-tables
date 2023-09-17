@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // import { AiFillHome, } from 'react-icons/ai';
 import { FcBusinessman, FcShop,FcPhoneAndroid,FcHome ,FcList} from 'react-icons/fc';
 
-function Table() {
+function Table({increaseTaskCount} ) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortColumn, setSortColumn] = useState(null);
   const [sortOrder, setSortOrder] = useState('asc');
@@ -70,6 +70,7 @@ function Table() {
         <div className="searchbar">
          
           <input
+          className='search'
             type="text"
             placeholder="Search for party"
             value={searchTerm}
@@ -80,6 +81,7 @@ function Table() {
               to={`/dashboard/${sortedData[0] ? sortedData[0].partyCode : ''
                 }`}
               className="party-code-link"
+              
             >
               Search
             </Link>
@@ -141,7 +143,8 @@ function Table() {
                     <button className="btn-x">
                       <Link
                         to={`/dashboard/${data.partyCode}`}
-                        className="party-code-link"
+                        className="party-code-link" 
+                        onClick={()=>{increaseTaskCount();}}
                       >
                         {data.partyCode}
                       </Link>
